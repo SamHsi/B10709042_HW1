@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">HW1</string>
     <string name="buttonText">確定</string>
+    <string name="checkboxDefault">CheckBox</string>
+    <string name="backtoPrevious">返回上一頁</string>
+    <string name="backClear">返回上一頁並清除選擇</string>
 </resources>

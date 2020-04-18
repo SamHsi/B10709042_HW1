@@ -26,15 +26,18 @@ public class ResultMenu extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                finish();
             }
         });
         Button backclear = (Button) findViewById(R.id.backclear);
         backclear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                for(MainActivity.Item temp: MainActivity.mData){
+                    temp.check = false;
+                }
                 MainActivity.ActivityA.recreate();
-                onBackPressed();
+                finish();
             }
         });
     }

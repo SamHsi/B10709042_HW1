@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ResultMenu">
+
+    <TextView
+        android:id="@+id/resultCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="text"
+        android:textAlignment="center"
+        android:textSize="50dp"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="172dp" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="181dp"
+        android:layout_height="89dp"
+        android:layout_gravity="center"
+        android:text="@string/backtoPrevious"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="115dp"
+        tools:layout_editor_absoluteY="268dp"
+        />
+
+    <Button
+        android:id="@+id/backclear"
+        android:layout_width="181dp"
+        android:layout_height="89dp"
+        android:layout_gravity="center"
+        android:text="@string/backClear"
+        tools:layout_editor_absoluteX="116dp"
+        tools:layout_editor_absoluteY="399dp" />
+</LinearLayout>
