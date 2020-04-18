@@ -1,8 +1,7 @@
-package com.example.hw1;
+package com.example.B10709042_HW1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
