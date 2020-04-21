@@ -15,7 +15,7 @@ public class ResultMenu extends AppCompatActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_menu);
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         if(intent.hasExtra("Extravalue")){
             count = intent.getIntExtra("Extravalue",0);
         }
@@ -32,10 +32,9 @@ public class ResultMenu extends AppCompatActivity {
         backclear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                for(MainActivity.Item temp: MainActivity.mData){
-                    temp.check = false;
-                }
-                MainActivity.ActivityA.recreate();
+                Intent clear = new Intent(ResultMenu.this,MainActivity.class);
+                clear.putExtra("clearTag",1);
+                startActivity(clear);
                 finish();
             }
         });

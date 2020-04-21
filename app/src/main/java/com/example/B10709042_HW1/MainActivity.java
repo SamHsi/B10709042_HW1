@@ -16,16 +16,14 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private MyAdapter adapter;
-    public static ArrayList<Item> mData = new ArrayList<>();
+    public final ArrayList<Item> mData = new ArrayList<>();
     private static int count = 0;
-    static MainActivity ActivityA;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ActivityA = this;
-        for(int i = 0; i < 100; i++) {
+        for (int i = 0; i < 30; i++) {
             Item temp = new Item();
             temp.setText(String.valueOf(i));
             temp.setCheck(false);
@@ -40,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 count = 0;
-                for (Item tmp : mData){
+                for (Item tmp : mData) {
                     if (tmp.check == true) {
                         count++;
                     }
@@ -48,13 +46,22 @@ public class MainActivity extends AppCompatActivity {
                 Context context = MainActivity.this;
                 Class Destination = ResultMenu.class;
                 Intent intent = new Intent(context, Destination);
-                intent.putExtra("Extravalue",count);
+                intent.putExtra("Extravalue", count);
                 startActivity(intent);
             }
         });
     }
 
-
+    @Override
+    protected void onResume() {
+        Intent data = getIntent();
+        if (data.hasExtra("clearTag")) {
+            for (Item tmp : mData) {
+                tmp.setCheck(false);
+            }
+        }
+        super.onResume();
+    }
 
     public class Item {
         String text;
